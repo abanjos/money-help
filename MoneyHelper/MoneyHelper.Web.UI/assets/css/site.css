@@ -1,0 +1,20 @@
+﻿body {
+    background: #f9f9f9;
+    display: grid;
+    height: 100vh;
+    grid-template-rows: auto 1fr auto;
+}
+
+.FirstPage {
+}
+
+footer {
+    padding-bottom: 50px;
+    text-align: center;
+    padding-top: 100px;
+}
+
+    footer a:first-child {
+        display: inline-block;
+        margin-bottom: 10px;
+    }
