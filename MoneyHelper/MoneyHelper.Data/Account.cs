@@ -3,15 +3,14 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace MoneyHelper.Data
 {
-    public class Category
+    public class Account
     {
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public long? Id { get; set; }
 
-        [Required]
-        public long LowCategoryId { get; set; }
+        public string UserName { get; set; }
 
-        public LowCategory LowCategory { get; set; }
+        public string PasswordHash { get; set; }
     }
 }

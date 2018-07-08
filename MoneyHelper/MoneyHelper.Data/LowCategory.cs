@@ -3,15 +3,13 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace MoneyHelper.Data
 {
-    public class Category
+    public class LowCategory
     {
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public long? Id { get; set; }
+        public long? LowCategoryId { get; set; }
 
         [Required]
-        public long LowCategoryId { get; set; }
-
-        public LowCategory LowCategory { get; set; }
+        public string Name { get; set; }
     }
 }

@@ -4,8 +4,10 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using MoneyHelper.Data;
 
 namespace MoneyHelper.Web.UI
 {
@@ -21,7 +23,12 @@ namespace MoneyHelper.Web.UI
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddMvc();
+            //db acess
+            services.AddDbContext<DataContext>(options =>
+                options.UseSqlServer(Configuration.GetConnectionString("MoneyHelperDb")));
+
+            services.AddMvc();          
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
