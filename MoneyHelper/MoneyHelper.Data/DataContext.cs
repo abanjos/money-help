@@ -26,8 +26,11 @@ namespace MoneyHelper.Data
 
         public virtual DbSet<Category> Categories { get; set; }
 
-        public DbSet<LowCategory> LowCategories { get; set; }
+        public virtual DbSet<SubCategory> SubCategory { get; set; }
 
+        public virtual DbSet<User> Users { get; set; }
+
+        public virtual DbSet<Account> Accounts { get; set; }
     
     }
 }

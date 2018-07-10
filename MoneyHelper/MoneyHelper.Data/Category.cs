@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
 namespace MoneyHelper.Data
@@ -9,9 +10,8 @@ namespace MoneyHelper.Data
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public long? Id { get; set; }
 
-        [Required]
-        public long LowCategoryId { get; set; }
-
-        public LowCategory LowCategory { get; set; }
+        public string Name { get; set; }        
+        
+        public virtual ICollection<SubCategory> SubCategory { get; set; }
     }
 }
