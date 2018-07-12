@@ -28,142 +28,70 @@ namespace MoneyHelper.Data
 
             context.Bills.AddRange(bills);
 
-            //SUBCATEGORIAS
-            var subCategories = new SubCategory[]
-            {
-                //food ok
-                new SubCategory { Name = "Almoço" }, //0
-                new SubCategory { Name = "Feira" }, //1
-                new SubCategory { Name = "Supermercado" }, //2
-                new SubCategory { Name = "Restaurante" }, //3
-                new SubCategory { Name = "Padaria" }, //4
-                new SubCategory { Name = "Petiscos" },//5
 
-                //pet ok
-                new SubCategory { Name = "Pet Shop" }, //6
-                new SubCategory { Name = "Ração" }, //7
-                new SubCategory { Name = "Veterinário" }, //8
-
-                //home ok
-                new SubCategory { Name = "Aluguel" }, //9
-                new SubCategory { Name = "Condomínio" }, //10
-                new SubCategory { Name = "Luz" }, //11
-                new SubCategory { Name = "Internet" }, //12
-                new SubCategory { Name = "TV a cabo" }, //13
-                new SubCategory { Name = "Água" },  //14
-                new SubCategory { Name = "Gás" }, //15
-                new SubCategory { Name = "Manutenção" }, //16
-
-                //education ok
-                new SubCategory { Name = "Faculdade" }, //17
-                new SubCategory { Name = "Escola" }, //18
-                new SubCategory { Name = "Livros" }, //19
-                new SubCategory { Name = "Cursos" }, //20
-
-                //personal expenses ok
-                new SubCategory { Name = "Roupas" }, //21
-                new SubCategory { Name = "Dízimo" }, //22
-                new SubCategory { Name = "Celular" }, //23
-                new SubCategory { Name = "Academia" }, //24
-                new SubCategory { Name = "Acessórios" }, //25
-
-                //lazer ok
-                new SubCategory { Name = "Bar ou Balada" }, //26
-                new SubCategory { Name = "Cinema, Teatro ou Show" }, //27
-                new SubCategory { Name = "Viagem" }, //28
-                new SubCategory { Name = "Passeio" }, //29
-                new SubCategory { Name = "Futebol" }, //30              
-
-
-            };
-
-            context.SubCategories.AddRange(subCategories);
-
-            //CATEGORIAS
+            //categories
             var categories = new Category[]
             {
-               new Category
-               {
-                   Name = "Alimentação",
-                   SubCategory =
-                   {
-                       subCategories.ElementAt(0),
-                       subCategories.ElementAt(1),
-                       subCategories.ElementAt(2),
-                       subCategories.ElementAt(3),
-                       subCategories.ElementAt(4),
-                       subCategories.ElementAt(5)
-                   }
-               },
+                new Category { Name = "Alimentação" }, //0
+                new Category { Name = "Casa" }, //1
+                new Category { Name = "Despesas Pessoais" }, //2
+                new Category { Name = "Lazer" }, //3
+                new Category { Name = "Pet" }, //4
+                new Category { Name = "Educação" } //5
+            };
 
-               new Category
-               {
-                   Name = "Casa",
-                   SubCategory =
-                   {
-                       subCategories.ElementAt(9),
-                       subCategories.ElementAt(10),
-                       subCategories.ElementAt(11),
-                       subCategories.ElementAt(12),
-                       subCategories.ElementAt(13),
-                       subCategories.ElementAt(14),
-                       subCategories.ElementAt(15),
-                       subCategories.ElementAt(16)
-                   }
-               },
+            context.Categories.AddRange(categories);
 
-               new Category
-               {
-                   Name = "Lazer",
-                   SubCategory =
-                   {
-                       subCategories.ElementAt(26),
-                       subCategories.ElementAt(27),
-                       subCategories.ElementAt(28),
-                       subCategories.ElementAt(29),
-                       subCategories.ElementAt(30)
-                   }
-               },
+            //SUBCATEGORIES
+            var subCategories = new SubCategory[]
+            {
+                //food
+                new SubCategory {Name = "Almoço", Category=categories.ElementAt(0)},
+                new SubCategory {Name = "Feira", Category=categories.ElementAt(0)},
+                new SubCategory {Name = "Supermercado", Category=categories.ElementAt(0)},
+                new SubCategory {Name = "Restaurante", Category=categories.ElementAt(0)},
+                new SubCategory {Name = "Padaria", Category=categories.ElementAt(0)},
+                new SubCategory {Name = "Petiscos", Category=categories.ElementAt(0)},
 
-               new Category
-               {
-                   Name = "Despesas Pessoais",
-                   SubCategory =
-                   {
-                       subCategories.ElementAt(21),
-                       subCategories.ElementAt(22),
-                       subCategories.ElementAt(23),
-                       subCategories.ElementAt(24),
-                       subCategories.ElementAt(25)
-                   }
-               },
+                //pet
+                new SubCategory {Name = "Pet Shop", Category=categories.ElementAt(4)},
+                new SubCategory {Name = "Ração", Category=categories.ElementAt(4)},
+                new SubCategory {Name = "Veterinário", Category=categories.ElementAt(4)},
 
-               new Category
-               {
-                   Name = "Pet",
-                   SubCategory =
-                   {
-                       subCategories.ElementAt(6),
-                       subCategories.ElementAt(7),
-                       subCategories.ElementAt(8)
-                   }
-               },
-               new Category
-               {
-                   Name = "Educação",
-                   SubCategory =
-                   {
-                       subCategories.ElementAt(17),
-                       subCategories.ElementAt(18),
-                       subCategories.ElementAt(19),
-                       subCategories.ElementAt(20)
-                   }
-               },
+                //home
+                new SubCategory {Name = "Aluguel", Category=categories.ElementAt(1)},
+                new SubCategory {Name = "Condomínio", Category=categories.ElementAt(1)},
+                new SubCategory {Name = "Luz", Category=categories.ElementAt(1)},
+                new SubCategory {Name = "Internet", Category=categories.ElementAt(1)},
+                new SubCategory {Name = "TV a cabo", Category=categories.ElementAt(1)},
+                new SubCategory {Name = "Água", Category=categories.ElementAt(1)},
+                new SubCategory {Name = "Gás", Category=categories.ElementAt(1)},
+                new SubCategory {Name = "Manutenção", Category=categories.ElementAt(1)},
+
+                //education
+                new SubCategory {Name = "Faculdade", Category=categories.ElementAt(5)},
+                new SubCategory {Name = "Escola", Category=categories.ElementAt(5)},
+                new SubCategory {Name = "Livros", Category=categories.ElementAt(5)},
+                new SubCategory {Name = "Cursos", Category=categories.ElementAt(5)},
+
+                //personal expenses
+                new SubCategory {Name = "Roupas", Category=categories.ElementAt(2)},
+                new SubCategory {Name = "Dízimo", Category=categories.ElementAt(2)},
+                new SubCategory {Name = "Celular", Category=categories.ElementAt(2)},
+                new SubCategory {Name = "Academia", Category=categories.ElementAt(2)},
+                new SubCategory {Name = "Acessórios", Category=categories.ElementAt(2)},
+
+                //lazer
+                new SubCategory {Name = "Bar / Balada", Category=categories.ElementAt(3)},
+                new SubCategory {Name = "Cinema", Category=categories.ElementAt(3)},
+                new SubCategory {Name = "Viagem", Category=categories.ElementAt(3)},
+                new SubCategory {Name = "Passeio", Category=categories.ElementAt(3)},
+                new SubCategory {Name = "Futebol", Category=categories.ElementAt(3)}
+
 
             };
 
-            //USER
-            context.Categories.AddRange(categories);
+            context.SubCategories.AddRange(subCategories);  
             context.SaveChanges();
 
         }
