@@ -14,5 +14,8 @@ namespace MoneyHelper.Data
 
         public virtual Category Category { get; set; }
 
+        [Required]
+        public int CategoryId { get; set; }
+
     }
 }
