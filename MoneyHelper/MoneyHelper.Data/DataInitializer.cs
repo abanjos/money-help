@@ -14,7 +14,7 @@ namespace MoneyHelper.Data
             context.Database.EnsureCreated();
 
             //verifying if any exists via linq
-            if (context.Transactions.Any())
+            if (context.Bills.Any())
                 return;
 
 
