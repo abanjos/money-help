@@ -7,7 +7,7 @@ namespace MoneyHelper.Data
     {
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public long? Id { get; set; }
+        public long Id { get; set; }
 
         [Required(AllowEmptyStrings = false, ErrorMessage = "Nome de usuário necessário")]
         public string UserName { get; set; }

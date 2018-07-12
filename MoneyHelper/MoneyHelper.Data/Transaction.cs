@@ -8,7 +8,7 @@ namespace MoneyHelper.Data
     {
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public long? Id { get; set; }
+        public long Id { get; set; }
 
         [Required]
         public decimal Amount { get; set; }

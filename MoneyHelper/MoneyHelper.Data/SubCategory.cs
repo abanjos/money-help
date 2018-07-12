@@ -7,7 +7,7 @@ namespace MoneyHelper.Data
     {
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public long? Id { get; set; }
+        public long Id { get; set; }
 
         [Required]
         public string Name { get; set; }
@@ -15,7 +15,7 @@ namespace MoneyHelper.Data
         public virtual Category Category { get; set; }
 
         [Required]
-        public int CategoryId { get; set; }
+        public long CategoryId { get; set; }
 
     }
 }

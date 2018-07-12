@@ -10,7 +10,7 @@ namespace MoneyHelper.Data
     {
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public long? Id { get; set; }
+        public long Id { get; set; }
 
         [Display(Name = "Primeiro Nome")]
         [Required(AllowEmptyStrings = false, ErrorMessage = "Necessário nome")]
