@@ -17,9 +17,5 @@ namespace MoneyHelper.Data
         [Required(AllowEmptyStrings = false, ErrorMessage = "Password necessário")]
         public string PasswordHash { get; set; }
 
-        [Display(Name = "Confirmar Password")]
-        [DataType(DataType.Password)]
-        [Required(AllowEmptyStrings = false, ErrorMessage = "Password não confere")]
-        public string ConfirmPasswordHash { get; set; }
     }
 }

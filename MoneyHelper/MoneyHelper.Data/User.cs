@@ -24,8 +24,7 @@ namespace MoneyHelper.Data
         [Required(AllowEmptyStrings = false, ErrorMessage = "Necessário endereço de e-mail")]
         [DataType(DataType.EmailAddress)]
         public string Email { get; set; }        
-
-        []
+                
         public Account Account { get; set; }
 
         public long AccountId { get; set; }

@@ -26,6 +26,8 @@ namespace MoneyHelper.Data
                 new Bill { Name = "Débito" } //2
             };
 
+            context.Bills.AddRange(bills);
+
             //SUBCATEGORIAS
             var subCategories = new SubCategory[]
             {
@@ -74,6 +76,8 @@ namespace MoneyHelper.Data
 
 
             };
+
+            context.SubCategories.AddRange(subCategories);
 
             //CATEGORIAS
             var categories = new Category[]
@@ -156,17 +160,11 @@ namespace MoneyHelper.Data
                    }
                },
 
-            };                     
-
-            //TRANSACTIONS
-            var transactions = new Transaction[]
-            {
-                new Transaction {
-                    Amount = 15.00m,
-                    TransactionType = 1,
-                },
             };
 
+            //USER
+            context.Categories.AddRange(categories);
+            context.SaveChanges();
 
         }
     }
