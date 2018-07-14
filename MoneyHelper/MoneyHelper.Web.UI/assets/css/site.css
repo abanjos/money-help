@@ -1,20 +1,72 @@
 ﻿body {
+    background: #249a50;
+}
+
+.FormPanel {
+    margin: 100px auto;
+    max-width: 400px;
+    padding: 15px;
+    background: white;
+    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+}
+
+    .FormPanel h1 {
+        color: #005a21;
+        font-family: 'Quicksand', sans-serif;
+        margin-top: 15px;
+        margin-bottom: 15px;
+        text-align: center;
+    }
+
+    .FormPanel img {
+        width: 80px;
+        margin: 0 auto;
+
+    }
+
+.form-control {
+    border: none;
+    border-radius: unset;
     background: #f9f9f9;
-    display: grid;
-    height: 100vh;
-    grid-template-rows: auto 1fr auto;
 }
 
-.FirstPage {
+a {
+    color: #249a50;
 }
 
-footer {
-    padding-bottom: 50px;
-    text-align: center;
-    padding-top: 100px;
+.nav-tabs .nav-link {
+    border-top-left-radius: unset;
+    border-top-right-radius: unset;
 }
 
-    footer a:first-child {
-        display: inline-block;
-        margin-bottom: 10px;
+.FormLogin {
+    margin-top: 15px;
+}
+
+    .FormLogin button {
+        text-transform: uppercase;
+        outline: 0;
+        border: 0;
+        padding: 15px;
+        color: white;
+        background: #018d35;
+        width: 100%;
+    }
+
+        .FormLogin button:hover, .form button:active, .form button:focus {
+            background: #005a21;
+        }
+
+.FormRegister {
+    margin-top: 15px;
+}
+
+    .FormRegister button {
+        text-transform: uppercase;
+        outline: 0;
+        border: 0;
+        padding: 15px;
+        color: white;
+        background: #018d35;
+        width: 100%;
     }
